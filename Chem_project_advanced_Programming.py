@@ -59,16 +59,20 @@ other_spores_Raff = np.array(Raffen_info.other_spo)
 Total_Raff = np.array(Raffen_info.Total)
 
 user_want = ""
+date = ""
 user_dataset = str(input("please enter the desired month(e.g. Feb, JUl, Aug)"))
 user_pollen = str(input("please enter the desired pollen type(e.g Alternia, Pen_Asp, Total)"))
 
 if user_dataset == "Feb":
     user_want += "_Feb"
+    date = "Date_Feb"
 elif user_dataset == "Aug" or "august":
     user_want += "_Aug"
+ date = "Date_Aug"
 elif user_dataset == "JUL" or "july":
     user_want += "_Raff"
-    
+    date = "Date_Raff"
+
 if user_pollen == "Alternia":
     user_want = "Alternia" + user_want
 elif user_pollen == "Pen_Asp":
@@ -104,7 +108,13 @@ elif user_pollen == "Hazel":
 elif user_pollen == "Alder":
     user_want = "Alder" + user_want
 
+x = pollen_data[date]
 
-print(user_want)
+plt.plot(x, pollen_data[user_want], 'r')
+plt.xlabel(date)
+plt.ylabel(user_want)
+plt.tick_params(axis='both', labelsize=10)
+plt.xticks(range(0, max_x + 1, 4))
+plt.show()
 
 

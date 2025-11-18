@@ -85,6 +85,19 @@ elif user_pollen == "Smuts":
     user_want = "Smuts" + user_want
 elif user_pollen == "Rusts":
     user_want = "Rusts" + user_want
+elif user_pollen == "Total":
+    user_want = "Total" + user_want
+elif user_pollen == "other_spores":
+    user_want = "other_spores" + user_want
+elif user_pollen == "Pithomyces":
+    user_want = "Pithomyces" + user_want
+elif user_pollen == "Polythrincium":
+    user_want = "polythrincium" + user_want
+elif user_pollen == "Torula":
+    user_want = "Torula" + user_want
+elif user_pollen == "Ascospores":
+    user_want = "Ascospores" + user_want
 
 
 print(user_want)
+

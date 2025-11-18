@@ -113,13 +113,12 @@ elif user_pollen == "Hazel":
 elif user_pollen == "Alder":
     user_want = "Alder" + user_want
 
-x = pollen_data[date]
-
 plt.plot(x, pollen_data[user_want], 'r')
 plt.xlabel(date)
 plt.ylabel(user_want)
 plt.tick_params(axis='both', labelsize=10)
 plt.show()
+
 
 
 

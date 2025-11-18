@@ -119,8 +119,8 @@ plt.plot(x, pollen_data[user_want], 'r')
 plt.xlabel(date)
 plt.ylabel(user_want)
 plt.tick_params(axis='both', labelsize=10)
-plt.xticks(range(0, max_x + 1, 4))
 plt.show()
+
 
 
 

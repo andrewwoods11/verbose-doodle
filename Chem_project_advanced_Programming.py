@@ -69,9 +69,22 @@ elif user_dataset == "Aug" or "august":
 elif user_dataset == "JUL" or "july":
     user_want += "_Raff"
     
-if user_pollen == "Alternia" or "alt":
+if user_pollen == "Alternia":
     user_want = "Alternia" + user_want
 elif user_pollen == "Pen_Asp":
     user_want = "Pen_Asp" + user_want
+elif user_pollen == "Cladiosporium":
+    user_want = "Cladiosporium" + user_want
+elif user_pollen == "Epicoccum":
+    user_want = "Epicoccum" + user_want
+elif user_pollen == "Coloured_Basidiospores":
+    user_want = "Coloured_Basidiospores" + user_want
+elif user_pollen == "Ganoderma":
+    user_want = "Ganoderma" + user_want
+elif user_pollen == "Smuts":
+    user_want = "Smuts" + user_want
+elif user_pollen == "Rusts":
+    user_want = "Rusts" + user_want
+
 
 print(user_want)

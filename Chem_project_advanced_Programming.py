@@ -97,7 +97,14 @@ elif user_pollen == "Torula":
     user_want = "Torula" + user_want
 elif user_pollen == "Ascospores":
     user_want = "Ascospores" + user_want
+elif user_pollen == "Yew":
+    user_want = "Yew" + user_want
+elif user_pollen == "Hazel":
+    user_want = "Hazel" + user_want
+elif user_pollen == "Alder":
+    user_want = "Alder" + user_want
 
 
 print(user_want)
+
 

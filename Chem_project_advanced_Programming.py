@@ -61,6 +61,39 @@ Total_Raff = np.array(Raffen_info.Total)
 pollen_data = {
     "Date_Aug": Date_Aug,
     "Alternia_Aug": Alternia_Aug,
+    "Pen_Asp_Aug": Pen_Asp_Aug,
+    "Cladiosporium_Aug": Claudiosporium_Aug,
+    "Epicoccum_Aug": Epicoccum_Aug,
+    "Basidiospores_Aug": Basidiospores_Aug,
+    "Ganoderma_Aug": Ganoderma_Aug,
+    "Smuts_Aug": Smuts_Aug,
+    "Rusts_Aug": Rusts_Aug,
+    "Ascospores_Aug": Ascospores_Aug,
+    "Torula_Aug": Torula_Aug,
+    "Polythrincium_Aug": Polythrincium_Aug,
+    "Pithomyces_Aug": Pithomyces_Aug,
+    "Other_spores_Aug": Other_spores_Aug,
+    "Total_Aug": Total_Aug,
+    "Date_Feb": Date_Feb,
+    "Yew_Feb": Yew_Feb,
+    "Hazel_Feb": Hazel_Feb,
+    "Alder_Feb": Alder_Feb,
+    "Total_Feb": Total_Feb,
+    "Date_Raff": Date_Raff,
+    "Alternia_Raff": Alternia_Raff,
+    "Pen_Asp_Raff": Pen_Asp_Raff,
+    "Cladiosporium_Raff": Cladiosporium_Raff,
+    "Epicoccum_Raff": Epicoccum_Raff,
+    "Coloured_Basidiospores_Raff": Coloured_Basidiospores_Raff,
+    "Ganoderma_Raff": Ganoderma_Raff,
+    "Smuts_Raff": Smuts_Raff,
+    "Rusts_Raff": Rusts_Raff,
+    "Ascospores_Raff": Ascospores_Raff,
+    "Torula_Raff": Torula_Raff,
+    "Polythrincium_Raff": Polythrincium_Raff,
+    "Pithomyces_Raff": Pithomyces_Raff,
+    "other_spores_Raff": other_spores_Raff,
+    "Total_Raff" Total_Raff
     }
 
 user_want = ""
@@ -118,6 +151,7 @@ plt.xlabel(date)
 plt.ylabel(user_want)
 plt.tick_params(axis='both', labelsize=10)
 plt.show()
+
 
 
 

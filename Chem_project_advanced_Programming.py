@@ -58,6 +58,11 @@ Pithomyces_Raff = np.array(Raffen_info.Pithomyces)
 other_spores_Raff = np.array(Raffen_info.other_spo)
 Total_Raff = np.array(Raffen_info.Total)
 
+pollen_data = {
+    "Date_Aug": Date_Aug,
+    "Alternia_Aug": Alternia_Aug,
+    }
+
 user_want = ""
 date = ""
 user_dataset = str(input("please enter the desired month(e.g. Feb, JUl, Aug)"))
@@ -116,5 +121,6 @@ plt.ylabel(user_want)
 plt.tick_params(axis='both', labelsize=10)
 plt.xticks(range(0, max_x + 1, 4))
 plt.show()
+
 
 

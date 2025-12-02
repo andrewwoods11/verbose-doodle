@@ -1,0 +1,194 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Nov 19 05:28:32 2025
+
+@author: dugga
+"""
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+ 
+Killy_Aug = r"Killarney August per metre cub.csv"
+Killy_Feb = r"Killarney Feb per metre cub.csv"
+Raffen = r"Raffen per metre cub.csv"
+
+August_info =  pd.read_csv(Killy_Aug)
+Feb_info = pd.read_csv(Killy_Feb)
+Raffen_info = pd.read_csv(Raffen)
+
+August_info.columns
+Date_Aug = np.array(August_info.Date)
+Alternia_Aug = np.array(August_info.Alternaria)
+Pen_Asp_Aug = np.array(August_info.Pen_Asp)
+Cladiosporium_Aug = np.array(August_info.Cladiosporium)
+Epicoccum_Aug = np.array(August_info.Epicoccum)
+Basidiospores_Aug = np.array(August_info.Basidiospores)
+Ganoderma_Aug = np.array(August_info.Ganoderma)
+Smuts_Aug = np.array(August_info.Smuts)
+Rusts_Aug = np.array(August_info.Rusts)
+Ascospores_Aug = np.array(August_info.Ascospores)
+Torula_Aug = np.array(August_info.Torula)
+Polythrincium_Aug = np.array(August_info.Polythrincium)
+Pithomyces_Aug = np.array(August_info.Pithomyces)
+Other_spores_Aug = np.array(August_info.Other_spores)
+Total_Aug = np.array(August_info.Total)
+
+Feb_info.columns
+Date_Feb = np.array(Feb_info.Date)
+Yew_Feb = np.array(Feb_info.Yew)
+Hazel_Feb = np.array(Feb_info.Hazel)
+Alder_Feb = np.array(Feb_info.Alder)
+Total_Feb = np.array(Feb_info.Total)
+
+Raffen_info.columns
+Date_Raff = np.array(Raffen_info.Date)
+Alternia_Raff = np.array(Raffen_info.Alternaria)
+Pen_Asp_Raff = np.array(Raffen_info.Pen_Asp)
+Cladiosporium_Raff = np.array(Raffen_info.Cladiosporium)
+Epicoccum_Raff = np.array(Raffen_info.Epicoccum)
+Coloured_Basidiospores_Raff = np.array(Raffen_info.Coloured_Basidiospores)
+Ganoderma_Raff = np.array(Raffen_info.Ganoderma)
+Smuts_Raff = np.array(Raffen_info.Smuts)
+Rusts_Raff = np.array(Raffen_info.Rusts)
+Ascospores_Raff = np.array(Raffen_info.other_ascospores)
+Torula_Raff = np.array(Raffen_info.Torula)
+Polythrincium_Raff = np.array(Raffen_info.Polythrincium)
+Pithomyces_Raff = np.array(Raffen_info.Pithomyces)
+other_spores_Raff = np.array(Raffen_info.other_spo)
+Total_Raff = np.array(Raffen_info.Total)
+
+pollen_data = {
+    "Date_Aug": Date_Aug,
+    "Alternia_Aug": Alternia_Aug,
+    "Pen_Asp_Aug": Pen_Asp_Aug,
+    "Cladiosporium_Aug": Cladiosporium_Aug,
+    "Epicoccum_Aug": Epicoccum_Aug,
+    "Basidiospores_Aug": Basidiospores_Aug,
+    "Ganoderma_Aug": Ganoderma_Aug,
+    "Smuts_Aug": Smuts_Aug,
+    "Rusts_Aug": Rusts_Aug,
+    "Ascospores_Aug": Ascospores_Aug,
+    "Torula_Aug": Torula_Aug,
+    "Polythrincium_Aug": Polythrincium_Aug,
+    "Pithomyces_Aug": Pithomyces_Aug,
+    "Other_spores_Aug": Other_spores_Aug,
+    "Total_Aug": Total_Aug,
+    "Date_Feb": Date_Feb,
+    "Yew_Feb": Yew_Feb,
+    "Hazel_Feb": Hazel_Feb,
+    "Alder_Feb": Alder_Feb,
+    "Total_Feb": Total_Feb,
+    "Date_Raff": Date_Raff,
+    "Alternia_Raff": Alternia_Raff,
+    "Pen_Asp_Raff": Pen_Asp_Raff,
+    "Cladiosporium_Raff": Cladiosporium_Raff,
+    "Epicoccum_Raff": Epicoccum_Raff,
+    "Coloured_Basidiospores_Raff": Coloured_Basidiospores_Raff,
+    "Ganoderma_Raff": Ganoderma_Raff,
+    "Smuts_Raff": Smuts_Raff,
+    "Rusts_Raff": Rusts_Raff,
+    "Ascospores_Raff": Ascospores_Raff,
+    "Torula_Raff": Torula_Raff,
+    "Polythrincium_Raff": Polythrincium_Raff,
+    "Pithomyces_Raff": Pithomyces_Raff,
+    "other_spores_Raff": other_spores_Raff,
+    "Total_Raff": Total_Raff
+    }
+
+user_want = ""
+date = ""
+user_time = str(input("enter m or d for data of month or day"))
+user_dataset = str(input("please enter the desired month(e.g. Feb, Jul, Aug)"))
+user_pollen = str(input("please enter the desired pollen type(e.g Alternia, Pen_Asp, Total)"))
+
+if user_time == "d":
+    user_day = str(input(f"what day of {user_dataset}{user_pollen}? i.e. 01 for first"))
+
+if user_dataset == "Feb":
+    user_want += "_Feb"
+    date = "Date_Feb"
+elif user_dataset == "Aug":
+    user_want += "_Aug"
+    date = "Date_Aug"
+elif user_dataset == "Jul":
+    user_want += "_Raff"
+    date = "Date_Raff"
+
+if user_pollen == "Alternia":
+    user_want = "Alternia" + user_want
+elif user_pollen == "Pen_Asp":
+    user_want = "Pen_Asp" + user_want
+elif user_pollen == "Cladiosporium":
+    user_want = "Cladiosporium" + user_want
+elif user_pollen == "Epicoccum":
+    user_want = "Epicoccum" + user_want
+elif user_pollen == "Coloured_Basidiospores":
+    user_want = "Coloured_Basidiospores" + user_want
+elif user_pollen == "Ganoderma":
+    user_want = "Ganoderma" + user_want
+elif user_pollen == "Smuts":
+    user_want = "Smuts" + user_want
+elif user_pollen == "Rusts":
+    user_want = "Rusts" + user_want
+elif user_pollen == "Total":
+    user_want = "Total" + user_want
+elif user_pollen == "other_spores":
+    user_want = "other_spores" + user_want
+elif user_pollen == "Pithomyces":
+    user_want = "Pithomyces" + user_want
+elif user_pollen == "Polythrincium":
+    user_want = "polythrincium" + user_want
+elif user_pollen == "Torula":
+    user_want = "Torula" + user_want
+elif user_pollen == "Ascospores":
+    user_want = "Ascospores" + user_want
+elif user_pollen == "Yew":
+    user_want = "Yew" + user_want
+elif user_pollen == "Hazel":
+    user_want = "Hazel" + user_want
+elif user_pollen == "Alder":
+    user_want = "Alder" + user_want
+
+if user_time == "m": 
+    x = pollen_data[date]
+    b = [time[3:5] + time[10:] for time in x]
+    unique_dates = []
+    daily_totals = []
+    date_c = b[0]
+    date_c = "00"
+    total_day = 0
+    pollen_t = pollen_data[user_want]
+    i = 0
+
+    for i in range(len(b)):
+        day = b[i]
+        date_n = day[0:2]
+        if date_n == date_c:
+            total_day += int(pollen_t[i])
+        else:
+            date_c = date_n
+            unique_dates.append(date_c)
+            daily_totals.append(int(total_day))
+            total_day = 0
+            total_day += int(pollen_t[i])
+        i += 1
+        
+    plt.plot(unique_dates, daily_totals, 'g')
+    plt.xlabel(date)
+    plt.ylabel(user_want)
+    plt.tick_params(axis='both', labelsize=8)
+    plt.show()
+
+elif user_time == "d":
+    g = pollen_data[date]
+    h = pollen_data[user_want]
+    b = [i for i, x in enumerate(g) if x[3:5] == user_day]
+    y = [h[i] for i in b]
+    g = [g[i] for i in b]
+    g = [x[11:] for x in g]
+    plt.plot(g, y)
+    plt.xlabel(f"time on {user_day}")
+    plt.ylabel(f"pollen count of {user_want}")
+    plt.tick_params(axis='both', labelsize=8)
+    plt.show()

@@ -156,7 +156,8 @@ if user_time == "m":
     unique_dates = []
     daily_totals = []
     date_c = b[0]
-    date_c = "00"
+    date_c = x[0]
+    date_c = date_c[3:5]
     total_day = 0
     pollen_t = pollen_data[user_want]
     i = 0
